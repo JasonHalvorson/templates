@@ -150,7 +150,8 @@
                 {
                     "name": "MOTD",
                     "label": "MOTD",
-                    "description": "The message of the day. Can use color codes with §."
+                    "description": "The message of the day. Can use color codes with §.",
+                    "default": "§b$lMinecraft Server"
                 },
                 {
                     "name": "SNOOPER_ENABLED",
