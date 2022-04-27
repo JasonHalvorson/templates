@@ -95,15 +95,25 @@
             },
             {
                 "name": "WHITELIST",
-                "description": "Whitelisted players, separated by commas"
+                "label": "Whitelisted Players",
+                "description": "Separated by commas, Example: user1,uuid2,user3"
             },
             {
                 "name": "WHITELIST_ENFORCE",
-                "description": "Enable whitelist",
-                "default": "true"
+                "label": "Enable Whitelist",
+                "select": [{
+                        "text": "Enabled",
+                        "value": "true",
+                        "default": true
+                    },
+                    {
+                        "text": "Disabled",
+                        "value": "false"
+                    }
+                ]
             }
         ],
-        "ports": ["25565/tcp"],
+        "ports": ["25565:25565/tcp"],
         "volumes": [{
                 "container": "/data"
             },
