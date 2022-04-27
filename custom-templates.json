@@ -1,127 +1,247 @@
 {
     "version": "2",
     "templates": [{
-        "type": 1,
-        "title": "Minecraft Lockout Server",
-        "description": "A Minecraft Lockout Server",
-        "categories": ["minecraft"],
-        "platform": "linux",
-        "logo": "https://media.forgecdn.net/avatars/thumbnails/499/109/64/64/637815485270361015.png",
-        "image": "itzg/minecraft-server",
-        "env": [{
-                "name": "TYPE",
-                "default": "FORGE",
-                "preset": true
-            },
-            {
-                "name": "VERSION",
-                "default": "1.18.1",
-                "preset": true
-            },
-            {
-                "name": "MEMORY",
-                "default": "8G",
-                "preset": true
-            },
-            {
-                "name": "MOTD",
-                "default": "§4§kX §r§c§lMinecraft Lockout §r§4§kX",
-                "preset": true
-            },
-            {
-                "name": "SNOOPER_ENABLED",
-                "default": "false",
-                "preset": true
-            },
-            {
-                "name": "MAX_TICK_TIME",
-                "default": "-1",
-                "preset": true
-            },
-            {
-                "name": "SPAWN_PROTECTION",
-                "default": "0",
-                "preset": true
-            },
-            {
-                "name": "ALLOW_FLIGHT",
-                "default": "true",
-                "preset": true
-            },
-            {
-                "name": "USE_AIKAR_FLAGS",
-                "default": "true",
-                "preset": true
-            },
-            {
-                "name": "ENABLE_ROLLING_LOGS",
-                "default": "true",
-                "preset": true
-            },
-            {
-                "name": "OVERRIDE_SERVER_PROPERTIES",
-                "default": "true",
-                "preset": true
-            },
-            {
-                "name": "DIFFICULTY",
-                "default": "normal",
-                "preset": true
-            },
-            {
-                "name": "EULA",
-                "default": "true",
-                "preset": true
-            },
-            {
-                "name": "OPS",
-                "default": "Ash2254",
-                "preset": true
-            },
-            {
-                "name": "ENABLE_AUTOPAUSE",
-                "default": "true",
-                "preset": true
-            },
-            {
-                "name": "AUTOPAUSE_TIMEOUT_INIT",
-                "default": "120",
-                "preset": true
-            },
-            {
-                "name": "AUTOPAUSE_TIMEOUT_EST",
-                "default": "300",
-                "preset": true
-            },
-            {
-                "name": "WHITELIST",
-                "label": "Whitelisted Players",
-                "description": "Separated by commas, Example: user1,uuid2,user3"
-            },
-            {
-                "name": "WHITELIST_ENFORCE",
-                "label": "Enable Whitelist",
-                "select": [{
-                        "text": "Enabled",
-                        "value": "true",
-                        "default": true
-                    },
-                    {
-                        "text": "Disabled",
-                        "value": "false"
-                    }
-                ]
-            }
-        ],
-        "ports": ["25565:25565/tcp"],
-        "volumes": [{
+            "type": 1,
+            "title": "Minecraft Lockout Server",
+            "description": "A Minecraft Lockout Server",
+            "categories": ["minecraft"],
+            "platform": "linux",
+            "logo": "https://media.forgecdn.net/avatars/thumbnails/499/109/64/64/637815485270361015.png",
+            "image": "itzg/minecraft-server",
+            "env": [{
+                    "name": "TYPE",
+                    "default": "FORGE",
+                    "preset": true
+                },
+                {
+                    "name": "VERSION",
+                    "default": "1.18.1",
+                    "preset": true
+                },
+                {
+                    "name": "MEMORY",
+                    "default": "8G",
+                    "preset": true
+                },
+                {
+                    "name": "MOTD",
+                    "default": "§4§kX §r§c§lMinecraft Lockout §r§4§kX",
+                    "preset": true
+                },
+                {
+                    "name": "SNOOPER_ENABLED",
+                    "default": "false",
+                    "preset": true
+                },
+                {
+                    "name": "MAX_TICK_TIME",
+                    "default": "-1",
+                    "preset": true
+                },
+                {
+                    "name": "SPAWN_PROTECTION",
+                    "default": "0",
+                    "preset": true
+                },
+                {
+                    "name": "ALLOW_FLIGHT",
+                    "default": "true",
+                    "preset": true
+                },
+                {
+                    "name": "USE_AIKAR_FLAGS",
+                    "default": "true",
+                    "preset": true
+                },
+                {
+                    "name": "ENABLE_ROLLING_LOGS",
+                    "default": "true",
+                    "preset": true
+                },
+                {
+                    "name": "OVERRIDE_SERVER_PROPERTIES",
+                    "default": "true",
+                    "preset": true
+                },
+                {
+                    "name": "DIFFICULTY",
+                    "default": "normal",
+                    "preset": true
+                },
+                {
+                    "name": "EULA",
+                    "default": "true",
+                    "preset": true
+                },
+                {
+                    "name": "OPS",
+                    "default": "Ash2254",
+                    "preset": true
+                },
+                {
+                    "name": "ENABLE_AUTOPAUSE",
+                    "default": "true",
+                    "preset": true
+                },
+                {
+                    "name": "AUTOPAUSE_TIMEOUT_INIT",
+                    "default": "120",
+                    "preset": true
+                },
+                {
+                    "name": "AUTOPAUSE_TIMEOUT_EST",
+                    "default": "300",
+                    "preset": true
+                },
+                {
+                    "name": "WHITELIST",
+                    "label": "Whitelisted Players",
+                    "description": "Separated by commas, Example: user1,uuid2,user3"
+                },
+                {
+                    "name": "WHITELIST_ENFORCE",
+                    "label": "Enable Whitelist",
+                    "select": [{
+                            "text": "Enabled",
+                            "value": "true",
+                            "default": true
+                        },
+                        {
+                            "text": "Disabled",
+                            "value": "false"
+                        }
+                    ]
+                }
+            ],
+            "ports": ["25565:25565/tcp"],
+            "volumes": [{
+                    "container": "/data"
+                },
+                {
+                    "container": "/mods",
+                    "bind": "/home/minecraft/mods/lockout-1.18.1"
+                }
+            ],
+            "restart_policy": "unless-stopped"
+        },
+        {
+            "type": 1,
+            "title": "Vanilla Minecraft Server",
+            "description": "A Vanilla Minecraft Server",
+            "categories": ["minecraft"],
+            "platform": "linux",
+            "image": "itzg/minecraft-server",
+            "env": [{
+                    "name": "TYPE",
+                    "default": "VANILLA",
+                    "preset": true
+                },
+                {
+                    "name": "VERSION",
+                    "label": "Version",
+                    "default": "latest",
+                    "description": "The version of Minecraft to run. This can be a version number, or 'latest' to use the latest version."
+                },
+                {
+                    "name": "MEMORY",
+                    "default": "8G",
+                    "preset": true
+                },
+                {
+                    "name": "MOTD",
+                    "label": "MOTD",
+                    "description": "The message of the day. Can use color codes with §."
+                },
+                {
+                    "name": "SNOOPER_ENABLED",
+                    "default": "false",
+                    "preset": true
+                },
+                {
+                    "name": "MAX_TICK_TIME",
+                    "default": "-1",
+                    "preset": true
+                },
+                {
+                    "name": "SPAWN_PROTECTION",
+                    "default": "0",
+                    "preset": true
+                },
+                {
+                    "name": "ALLOW_FLIGHT",
+                    "default": "true",
+                    "preset": true
+                },
+                {
+                    "name": "USE_AIKAR_FLAGS",
+                    "default": "true",
+                    "preset": true
+                },
+                {
+                    "name": "ENABLE_ROLLING_LOGS",
+                    "default": "true",
+                    "preset": true
+                },
+                {
+                    "name": "OVERRIDE_SERVER_PROPERTIES",
+                    "default": "true",
+                    "preset": true
+                },
+                {
+                    "name": "DIFFICULTY",
+                    "label": "Difficulty",
+                    "description": "The difficulty of the game. Can be 'peaceful', 'easy', 'normal' or 'hard'"
+                },
+                {
+                    "name": "EULA",
+                    "default": "true",
+                    "preset": true
+                },
+                {
+                    "name": "OPS",
+                    "default": "Ash2254",
+                    "preset": true
+                },
+                {
+                    "name": "ENABLE_AUTOPAUSE",
+                    "default": "true",
+                    "preset": true
+                },
+                {
+                    "name": "AUTOPAUSE_TIMEOUT_INIT",
+                    "default": "120",
+                    "preset": true
+                },
+                {
+                    "name": "AUTOPAUSE_TIMEOUT_EST",
+                    "default": "300",
+                    "preset": true
+                },
+                {
+                    "name": "WHITELIST",
+                    "label": "Whitelisted Players",
+                    "description": "Separated by commas, Example: user1,uuid2,user3"
+                },
+                {
+                    "name": "ENFORCE_WHITELIST",
+                    "label": "Enable Whitelist",
+                    "select": [{
+                            "text": "Enabled",
+                            "value": "true",
+                            "default": true
+                        },
+                        {
+                            "text": "Disabled",
+                            "value": "false"
+                        }
+                    ]
+                }
+            ],
+            "ports": ["25565:25565/tcp"],
+            "volumes": [{
                 "container": "/data"
-            },
-            {
-                "container": "/mods",
-                "bind": "/home/minecraft/mods/lockout-1.18.1"
-            }
-        ],
-        "restart_policy": "unless-stopped"
-    }]
+            }],
+            "restart_policy": "unless-stopped"
+        }
+    ]
 }
